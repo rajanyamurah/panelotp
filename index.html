@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Created by @alyaaid</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('wlpp.jpg');
+            display: flex;
+            background-position: center;
+            background-size: cover;
+            justify-content: center;
+            align-items: center;
+            font-family: Monospace;
+            overflow: hidden;
+        }
+
+        .login-container {
+            width: 80%;
+            max-width: 250px; /* Set max-width for better responsiveness */
+            padding: 10px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .login-container h2 {
+            margin-bottom: 12px;
+            color: #ff7732;
+            font-size: 25px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .login-container input {
+            width: 70%; /* Make inputs take full width */
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .login-container input[type='submit'] {
+            background: #ff7732;
+            color: #fff;
+            cursor: pointer;
+            animation: slideIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Media Query for responsiveness */
+        @media (max-width: 768px) {
+            .login-container {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>🚀 MURID NOKOS</h2>
+        <form id="loginForm">
+            <input type="text" id="username" name="username" placeholder="Username"><br><br>
+            <input type="password" id="password" name="password" placeholder="Password"><br><br>
+            <input type="submit" value="Login">
+        </form>
+        <p id="message" style="color: red; display: none;">Username or password is incorrect. Please try again.</p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Check username and password
+            if (username === 'root' && password === 'root') {
+                // Redirect to another page if username and password are correct
+                window.location.href = 'blank.html';
+            } else {
+                // Display error message if username or password is incorrect
+                document.getElementById('message').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
